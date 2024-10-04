@@ -15,7 +15,7 @@ it('should login successfully with valid credentials', () => {
   cy.get('input[name="user-name"]').type('standard_user');
   cy.get('input[name="password"]').type('secret_sauce');
 
-  // Klik tombol login
+  // Klik button login
   cy.get('input[type="submit"]').click();
 
   // Memastikan pengguna diarahkan ke halaman dashboard setelah login

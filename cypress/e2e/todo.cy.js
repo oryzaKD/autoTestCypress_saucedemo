@@ -10,7 +10,7 @@ it('should display the login page correctly', () => {
   cy.get('input[type="submit"]').should('be.visible');
 });
 
-it('should login successfully with valid credentials', () => {
+it('should login successfully with correct user', () => {
   // Isi input email dan password dengan kredensial yang benar
   cy.get('input[name="user-name"]').type('standard_user');
   cy.get('input[name="password"]').type('secret_sauce');

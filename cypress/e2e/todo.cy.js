@@ -1,7 +1,17 @@
 describe('saucedemo', () => {
   beforeEach(() => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
     const baseUrl = Cypress.config('baseUrl');
+    // cy.viewport(800, 600); // Adjust dimensions as needed
+    cy.viewport(1280, 720)
     cy.visit(baseUrl);
+    // Inject CSS to set the zoom level to 70%
+    cy.document().then((doc) => {
+      const style = doc.createElement('style');
+      style.innerHTML = 'body { transform: scale(0.7); transform-origin: 0 0; }';
+      doc.head.appendChild(style);
+    });
   });
 
   it('Make sure the email and password input elements and login button are present.', () => {
